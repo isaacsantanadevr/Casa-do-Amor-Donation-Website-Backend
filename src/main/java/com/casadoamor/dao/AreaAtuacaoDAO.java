@@ -1,3 +1,9 @@
+/* ***************************************************************
+* Projeto.........: Casa do Amor
+* Autores.........: Caio Cordeiro, Cibelly Batista, Gabriel Marcone, Isaac Santana, Joao Guilherme
+* Nome.............: AreaAtuacaoDAO.java
+* Funcao...........: DAO para gerenciar areas de atuacao no banco de dados
+*************************************************************** */
 package com.casadoamor.dao;
 
 import java.sql.Connection;
@@ -13,21 +19,26 @@ import com.casadoamor.model.AreaAtuacao;
 import com.casadoamor.util.ConnectionFactory;
 
 public class AreaAtuacaoDAO {
-  // Método essencial para o dropdown do formulário
+  /* ***************************************************************
+  * Metodo: listar
+  * Funcao: Lista todas as areas de atuacao do banco de dados.
+  * Parametros: Sem parametros.
+  * Retorno: List<AreaAtuacao> - Lista de areas de atuacao.
+  * *************************************************************** */
   public List<AreaAtuacao> listar() {
     String sql = "SELECT * FROM AreaAtuacao";
     List<AreaAtuacao> retorno = new ArrayList<>();
     try(Connection connection = ConnectionFactory.getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        ResultSet resultado = pstm.executeQuery()) {
+      PreparedStatement pstm = connection.prepareStatement(sql);
 
-          while(resultado.next()){
-            AreaAtuacao area = new AreaAtuacao();
-            area.setIdArea(resultado.getLong("idArea"));
-            area.setNome(resultado.getString("nome"));
-            retorno.add(area);
-          }
-        } catch (SQLException ex){
+      ResultSet resultado = pstm.executeQuery()) {
+        while(resultado.next()) {
+          AreaAtuacao area = new AreaAtuacao();
+          area.setIdArea(resultado.getLong("idArea"));
+          area.setNome(resultado.getString("nome"));
+          retorno.add(area);
+        }
+      } catch (SQLException ex){
       Logger.getLogger(VoluntarioDAO.class.getName()).log(Level.SEVERE, null, ex);
       throw new RuntimeException("Erro ao listar areas de atuação", ex);
     }

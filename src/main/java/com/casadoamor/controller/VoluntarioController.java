@@ -1,3 +1,9 @@
+/* ***************************************************************
+* Projeto.........: Casa do Amor
+* Autores.........: Caio Cordeiro, Cibelly Batista, Gabriel Marcone, Isaac Santana, Joao Guilherme
+* Nome.............: VoluntarioController.java
+* Funcao...........: Controlador REST para gerenciar inscricoes de voluntarios
+*************************************************************** */
 package com.casadoamor.controller;
 
 import com.casadoamor.model.AreaAtuacao;
