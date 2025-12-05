@@ -62,4 +62,29 @@ public class VoluntarioService {
   public List<AreaAtuacao> buscarAreasParaDropdown(){
     return areaAtuacaoDAO.listar();
   }
+
+  public void atualizarVoluntario(Long id, Voluntario voluntario) throws Exception {
+        if (id == null) throw new Exception("ID é obrigatório");
+        
+        // Verifica se existe antes de tentar atualizar
+        if (voluntarioDAO.buscarPorId(id) == null) {
+            throw new Exception("Voluntário não encontrado.");
+        }
+        
+        // Garante que o objeto tenha o ID da URL para o SQL WHERE funcionar
+        voluntario.setIdUsuario(id);
+        
+        // Validações básicas (pode reaproveitar as do registrar ou criar método privado validar())
+        if (voluntario.getNome() == null || voluntario.getNome().trim().isEmpty()) throw new Exception("Nome obrigatório.");
+        
+        voluntarioDAO.atualizar(voluntario);
+    }
+
+    public void excluirVoluntario(Long id) throws Exception {
+        if (voluntarioDAO.buscarPorId(id) == null) {
+            throw new Exception("Voluntário não encontrado.");
+        }
+        voluntarioDAO.excluir(id);
+    }
+    
 }
