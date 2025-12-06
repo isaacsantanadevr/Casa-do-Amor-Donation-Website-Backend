@@ -1,6 +1,6 @@
 /* ***************************************************************
 * Projeto.........: Casa do Amor
-* Autores.........: Caio Cordeiro, Cibelly Batista, Gabriel Marcone, Isaac Santana, Joao Guilherme
+* Autores.........: Caio Cordeiro, Carolina Moraes, Cibelly Batista, Gabriel Marcone, Isaac Santana, Joao Guilherme
 * Nome.............: DoacaoService.java
 * Funcao...........: Servico para gerenciar as operacoes de doacao no sistema
 *************************************************************** */

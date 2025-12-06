@@ -1,6 +1,6 @@
 /* ***************************************************************
 * Projeto.........: Casa do Amor
-* Autores.........: Caio Cordeiro, Cibelly Batista, Gabriel Marcone, Isaac Santana, Joao Guilherme
+* Autores.........: Caio Cordeiro, Carolina Moraes, Cibelly Batista, Gabriel Marcone, Isaac Santana, Joao Guilherme
 * Nome.............: MetodoPagamento.java
 * Funcao...........: Enum para metodos de pagamento
 *************************************************************** */
